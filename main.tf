@@ -26,8 +26,6 @@ resource "aws_s3_object" "app" {
   bucket       = aws_s3_bucket.app.id
   content      = file("./assets/index.html")
   content_type = "text/html"
-  depends_on = [aws_s3_bucket_ownership_controls.example]
-  depends_on = [aws_s3_bucket_public_access_block.example]
 }
 
 resource "aws_s3_bucket_acl" "bucket" {
