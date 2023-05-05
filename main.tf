@@ -31,7 +31,6 @@ resource "aws_s3_object" "app" {
 resource "aws_s3_bucket_acl" "bucket" {
   bucket = aws_s3_bucket.app.id
   acl    = "public-read"
-  depends_on = [aws_s3_bucket_ownership_controls.example]
   depends_on = [aws_s3_bucket_public_access_block.example]
 }
 
